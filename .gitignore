@@ -1,2 +1,29 @@
+# Mac OS
+.DS_Store
+
+# IntelliJ Idea generated files
+*.iml
+*.ipr
+.idea_modules/
+.idea/
+*.iws
+bin/
+**./bin/
+out/
+**./out/
+
+# Eclipse generated files
 .classpath
+**/.classpath
 .project
+**/.project
+.settings/
+**/.settings/
+
+# SBT
+target/
+lib_managed/
+src_managed/
+project/boot/
+.history
+.cache

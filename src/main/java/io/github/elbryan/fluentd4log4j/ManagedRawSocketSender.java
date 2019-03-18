@@ -1,4 +1,4 @@
-package com.twimba.fluentd4log4j;
+package io.github.elbryan.fluentd4log4j;
 
 import org.fluentd.logger.sender.RawSocketSender;
 import org.fluentd.logger.sender.Reconnector;
