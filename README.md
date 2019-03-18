@@ -4,16 +4,28 @@ _A Log4J appender to push log events to a fluentd server._
 
 ## How to Use
 
+At the beginning it could be surprising that this project is packaged via SBT (being the codebase mostly in Java). Main
+reason is that I am not familiar at all with Maven/POMs. This SBT project comes with the `sbt assembly` plugin configured.
+
+The scala version used is 2.11 as this is compatible with Spark.
+
 ### Maven dependency
 ```
 <dependency>
-    <groupId>com.twimba</groupId>
+    <groupId>io.github.elbryan</groupId>
     <artifactId>fluentd4log4j</artifactId>
 	<version>1.0</version>
 </dependency>
 ```
 
+### SBT dependency
+```
+libraryDependencies += "io.github.elbryan" % "fluentd4log4j" % "1.0"
+```
+
+
 ### Configuration
+
 | property      | default value    | Description  |
 | ------------- |------------------| -------------|
 | mdcKeys | "" | The MDC keys (comma separated) that should be added to the log structure. |
@@ -27,6 +39,7 @@ _A Log4J appender to push log events to a fluentd server._
 
 ### Example
 **log4j.properties**
+
 ```
 log4j.rootLogger=info, fluentd
 log4j.appender.fluentd=io.github.elbryan.fluentd4log4j.FluentdAppender
@@ -37,6 +50,7 @@ log4j.appender.fluentd.addHostname=true
 log4j.appender.fluentd.mdcKeys=userid,host,whatever
 ```
 **fluentd configuration**
+
 ```
 <source>
   type forward
@@ -46,6 +60,14 @@ log4j.appender.fluentd.mdcKeys=userid,host,whatever
 <match ** >
 	type stdout
 </match>
+```
+
+### Assembling the project / fatjars
+If you want to generate the fatjar, simply open sbt and issue `assembly`
+
+```
+$> sbt
+sbt:fluentd4log4j> assembly
 ```
 
 ## License
