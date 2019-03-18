@@ -29,9 +29,12 @@ _A Log4J appender to push log events to a fluentd server._
 **log4j.properties**
 ```
 log4j.rootLogger=info, fluentd
-log4j.appender.fluentd=com.twimba.fluentd4log4j.FluentdAppender.java
-log4j.appender.fluentd.mdcKeys=user,host,whatever
-log4j.appender.fluentd.host=fluentdhost
+log4j.appender.fluentd=io.github.elbryan.fluentd4log4j.FluentdAppender
+log4j.appender.fluentd.tag=tef-cells-ingestion
+log4j.appender.fluentd.host=fluentd.service.1e100.net
+log4j.appender.fluentd.port=24224
+log4j.appender.fluentd.addHostname=true
+log4j.appender.fluentd.mdcKeys=userid,host,whatever
 ```
 **fluentd configuration**
 ```
