@@ -13,8 +13,10 @@ lazy val root = (project in file("."))
     "log4j" % "log4j" % "1.2.17")
   )
 
-// Uncomment the following for publishing to Sonatype.
-// See https://www.scala-sbt.org/1.x/docs/Using-Sonatype.html for more detail.
+ crossPaths := false
+ updateOptions := updateOptions.value.withGigahorse(false)
+
+// Section needed for publishing to Maven Central
 
  ThisBuild / description := "Fluentd appender compatible with log4j"
  ThisBuild / licenses    := List("Apache 2" -> new URL("http://www.apache.org/licenses/LICENSE-2.0.txt"))
