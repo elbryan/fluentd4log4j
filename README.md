@@ -1,5 +1,7 @@
 # fluentd4log4j
 
+[![Release Artifacts][Badge-SonatypeReleases]][Link-SonatypeReleases]
+
 _A Log4J appender to push log events to a fluentd server._
 
 ## How to Use
@@ -73,3 +75,6 @@ sbt:fluentd4log4j> assembly
 ## License
 This is available in the Apache Licence 2.0
 http://www.tldrlegal.com/license/apache-license-2.0-(apache-2.0)
+
+[Badge-SonatypeReleases]: https://img.shields.io/nexus/r/https/oss.sonatype.org/io.github.elbryan/fluentd4log4j.svg "Sonatype Releases"
+[Link-SonatypeReleases]: https://oss.sonatype.org/content/repositories/releases/io/github/elbryan/fluentd4log4j/ "Sonatype Releases"
